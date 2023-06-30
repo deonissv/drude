@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Drude</title>
+</head>
+
+<body>
+  <div id="main">
+    <div class="controls">
+      <div id="distanceControl">
+        <div>
+          <span>Ions distance</span>
+          <input type="number" min="40" max="300" value="120" step="1" id="distanceInput" class="numInput">
+        </div>
+        <div>
+          <input type="range" min="40" max="300" value="120" step="1" id="distanceSlider" class="slider">
+        </div>
+      </div>
+      <div id="electricFieldControl">
+        <div>
+          <span>Electric field strength</span>
+          <input type="number" min="-1" max="1" value="0" step="0.01" id="electricFieldInput" class="numInput">
+        </div>
+        <div>
+          <input type="range" min="-1" max="1" value="0" step="0.01" id="electricFieldSlider" class="slider">
+        </div>
+      </div>
+      <div id="suppressionControl">
+        <div>
+          <span>Velocity suppression</span>
+          <input type="number" min="0" max="1" value="0" step="0.001" id="suppressionInput" class="numInput">
+        </div>
+        <div>
+          <input type="range" min="0" max="1" value="0" step="0.001" id="suppressionSlider" class="slider">
+        </div>
+      </div>
+      <div id="initVelocity">
+        <div>
+          <span>Initial velocity multiplier</span>
+          <input type="number" min="0" max="5" value="1" step="0.1" id="velocityInput" class="numInput">
+        </div>
+        <div>
+          <input type="range" min="0" max="5" value="1" step="0.1" id="velocitySlider" class="slider">
+        </div>
+      </div>
+      <div id="electornAmount">
+        <div>
+          <span>Amount of electrons</span>
+          <input type="number" min="1" max="250" value="50" step="1" id="electronsInput" class="numInput">
+        </div>
+        <div>
+          <input type="range" min="1" max="250" value="50" step="1" id="electronsSlider" class="slider">
+        </div>
+      </div>
+      <div id="volume">
+        <div>
+          <span>Volume</span>
+          <input type="number" min="1" max="200" value="100" step="1" id="volumeInput" class="numInput">
+        </div>
+        <div>
+          <input type="range" min="1" max="200" value="100" step="1" id="volumeSlider" class="slider">
+        </div>
+      </div>
+      <div id="resetWrapper">
+        <button id="resetButton">Reset</button>
+      </div>
+    </div>
+    <div id="simulation"><canvas id="canvas" width="800" height="600"></canvas></div>
+    <div id="results">
+      <div id="electronsResults">
+        <span class="resultText">Electrons left side: <span class="resultValue" id="electronsLeft">-</span></span>
+        <span class="resultText">Electrons right side: <span class="resultValue" id="electronsRight">-</span></span>
+        <span class="resultText">Electrons difference: <span class="resultValue"
+            id="electronsDifference">-</span></span>
+      </div>
+      <span class="resultText">Current Value: <span class="resultValue" id="currentValue">-</span> A</span>
+      <span class="resultText" id="avgTimeWrapper">Average time between bounces: <span class="resultValue"
+          id="avgTime">-</span> s</span>
+      <span class="resultText">Drift velocity: <span class="resultValue" id="driftVelocity">-</span>
+        <sup>μ</sup>/<sub>m</sub></span>
+      <span class="resultText">Electron mobility: <span class="resultValue" id="electronMobility">-</span>
+        <sup>cm<sup>2</sup></sup>/<sub>V s</sub></span>
+      <span class="resultText">Current density: <span class="resultValue" id="currentDensity">-</span>
+        <sup>A</sup>/<sub>mm<sup>2</sup></sub></span>
+    </div>
+  </div>
+</body>
+
+</html>
